@@ -1,0 +1,88 @@
+import React, { useState } from 'react';
+
+function Experiment8() {
+
+  const [count, setCount] = useState(0);
+
+  return (
+
+    <div className="counter-box">
+
+        <style>{`
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #f4f4f4; 
+        } 
+ 
+        .counter-box { 
+        width: 300px; 
+        margin: 100px auto; 
+        padding: 30px; 
+        text-align: center; 
+        background: white; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        } 
+ 
+        h1 { 
+        margin-bottom: 20px;
+        } 
+
+        h2 { 
+        font-size: 50px; 
+        margin-bottom: 20px;
+        }
+        
+        .pos { 
+        color: green; 
+        } 
+        
+        .neg { 
+        color: red; 
+        } 
+        
+        .buttons button { 
+        margin: 5px; 
+        padding: 10px 15px; 
+        border: none; 
+        background: #007bff; 
+        color: white; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        } 
+        
+        .buttons button:hover { 
+        background: #0056b3; 
+        }
+
+        .zero {
+        color: green;
+        }
+        `}</style>
+
+      <h1>React Counter</h1>
+
+      <h2 className={count > 0 ? 'pos' : count < 0 ? 'neg' : 'zero'}>{count}</h2>
+      <div className="buttons">
+
+        <button onClick={() => setCount(count + 1)}>
+          Increment (+)
+        </button>
+
+        <button onClick={() => setCount(count - 1)}>
+          Decrement (-)
+        </button>
+
+        <button onClick={() => setCount(0)}>
+          Reset
+        </button>
+
+      </div>
+
+    </div>
+
+  );
+}
+
+export default Experiment8;
